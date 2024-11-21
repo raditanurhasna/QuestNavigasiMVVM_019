@@ -43,6 +43,9 @@ fun Navigasi(
                     listGender = ListGender.listJk.map {
                             isi -> konteks.resources.getString(isi)
                     },
+                    onSubmitClick = {
+                        viewModel.saveDataMhs(it)
+                        navHostController.navigate(Halaman.Data.name)
         }
 
         }
