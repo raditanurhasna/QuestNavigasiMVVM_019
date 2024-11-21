@@ -28,14 +28,14 @@ fun FormMahasiswaView(
     onSubmitClick: (MutableList<String>) -> Unit
 ){
     var nama by remember { mutableStateOf("") }
-    var nim by remember { mutableStateOf("") }
-    var email by remember { mutableStateOf("")}
-    var noTelp by remember { mutableStateOf("")}
-    var alamat by remember { mutableStateOf("")}
     var memilihJk by remember { mutableStateOf("")}
+    var nim by remember { mutableStateOf("") }
+    var noTelp by remember { mutableStateOf("")}
+    var email by remember { mutableStateOf("")}
+    var alamat by remember { mutableStateOf("")}
 
     val Mahasiswa: MutableList<String> = mutableListOf(
-        nama, nim, email, noTelp, alamat, memilihJk
+        nama, memilihJk, nim, noTelp, email, alamat,
     )
     Column (modifier = modifier
         .fillMaxSize()
@@ -76,19 +76,19 @@ fun FormMahasiswaView(
         )
         TextField(
             modifier = Modifier .fillMaxWidth() .padding(5.dp),
+            value = noTelp,
+            onValueChange = {noTelp = it},
+            label = { Text( "noTelp") },
+            placeholder = { Text( "Masukkan NoTelp Anda") },
+        )
+        TextField(
+            modifier = Modifier .fillMaxWidth() .padding(5.dp),
             value = email,
             onValueChange = {email = it},
             label = { Text( "email") },
             placeholder = { Text( "Masukkan Email Anda") },
         )
 
-        TextField(
-            modifier = Modifier .fillMaxWidth() .padding(5.dp),
-            value = noTelp,
-            onValueChange = {noTelp = it},
-            label = { Text( "noTelp") },
-            placeholder = { Text( "Masukkan NoTelp Anda") },
-        )
         TextField(
             modifier = Modifier .fillMaxWidth() .padding(5.dp),
             value = alamat,
