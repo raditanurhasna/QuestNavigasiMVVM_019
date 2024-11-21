@@ -33,3 +33,9 @@ fun Navigasi(
 ){
     Scaffold { isipadding ->
         val uiState by viewModel.dataModel.collectAsState()
+        NavHost(
+            modifier = modifier.padding(isipadding),
+            navController = navHostController, startDestination = Halaman.Form.name
+        ) {
+
+        }
