@@ -25,3 +25,4 @@ enum class Halaman{
     Data
 }
 
+@Composable
