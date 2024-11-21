@@ -39,6 +39,10 @@ fun Navigasi(
         ) {
             composable(route = Halaman.Form.name){
                 val konteks = LocalContext.current
+                FormMahasiswaView(
+                    listGender = ListGender.listJk.map {
+                            isi -> konteks.resources.getString(isi)
+                    },
         }
 
         }
