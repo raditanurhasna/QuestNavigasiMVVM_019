@@ -30,4 +30,6 @@ fun Navigasi(
     modifier: Modifier = Modifier,
     viewModel: MahasiswaViewModel = viewModel(),
     navHostController: NavHostController = rememberNavController()
-){}
+){
+    Scaffold { isipadding ->
+        val uiState by viewModel.dataModel.collectAsState()
