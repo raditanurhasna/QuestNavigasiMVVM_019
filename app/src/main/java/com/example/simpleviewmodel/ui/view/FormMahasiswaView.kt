@@ -28,13 +28,14 @@ fun FormMahasiswaView(
     onSubmitClick: (MutableList<String>) -> Unit
 ){
     var nama by remember { mutableStateOf("") }
+    var nim by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("")}
     var noTelp by remember { mutableStateOf("")}
     var alamat by remember { mutableStateOf("")}
     var memilihJk by remember { mutableStateOf("")}
 
     val Mahasiswa: MutableList<String> = mutableListOf(
-        nama, memilihJk, alamat
+        nama, nim, email, noTelp, alamat, memilihJk
     )
     Column (modifier = modifier
         .fillMaxSize()
@@ -68,11 +69,19 @@ fun FormMahasiswaView(
         }
         TextField(
             modifier = Modifier .fillMaxWidth() .padding(5.dp),
+            value = nim,
+            onValueChange = {nim = it},
+            label = { Text( "nim") },
+            placeholder = { Text( "Masukkan NIM Anda") },
+        )
+        TextField(
+            modifier = Modifier .fillMaxWidth() .padding(5.dp),
             value = email,
             onValueChange = {email = it},
             label = { Text( "email") },
             placeholder = { Text( "Masukkan Email Anda") },
         )
+
         TextField(
             modifier = Modifier .fillMaxWidth() .padding(5.dp),
             value = noTelp,
